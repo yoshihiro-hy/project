@@ -1,0 +1,80 @@
+<script src="js/head.js"></script>
+<body class="h-100">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <div class="container-fluid text-center vh-100">
+    <div class="row">
+      <script src="js/dashboard.js"></script>
+      <div class="col-9 py-3">
+        <a class="btn btn-outline-dark float-start" href="workforce_management.html" role="button">戻る</a>
+        <div class="d-flex flex-row mt-5">
+          <div class="col-2">氏名: 田中太郎</div>
+          <div class="col-2">取引先: ServiceNow</div>
+          <div class="col-2">社員BP: 社員</div>
+          <div class="col-2">要員区別: 直接</div>
+          <div class="col-2 btn btn-outline-danger">Edit</div>
+          <div class="ms-1 col-2 btn btn-outline-primary">Recover</div>
+        </div><br>
+        <div class="d-flex flex-row">
+          <div class="row">
+            <div class="col-2 ms-5">
+              <select type="text" class="form-select">
+                <option selected>月日</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </div>
+            <div class="col-2 ms-3">
+              <input type="text" class="form-control" placeholder="月例給">
+            </div>
+            <div class="col-2 ms-4">
+              <input type="text" class="form-control" placeholder="社会保険">
+            </div>
+            <div class="col-2 ms-4">
+              <input type="text" class="form-control" placeholder="通勤費">
+            </div>
+            <div class="col-2 ms-5 btn btn-outline-success">Add</div>
+          </div>
+        </div>
+        <table class="table mt-5">
+          <thead>
+            <tr>
+              <th scope="col">月</th>
+              <th scope="col">月例給</th>
+              <th scope="col">社会保険</th>
+              <th scope="col">交通費</th>
+              <th scope="col">Total Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>300,000</td>
+              <td>?</td>
+              <td>6,800</td>
+              <td>306,800</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <script src="js/pagenation.js"></script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

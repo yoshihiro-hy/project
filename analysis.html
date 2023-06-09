@@ -1,0 +1,87 @@
+<script src="js/head.js"></script>
+<body class="h-100">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <div class="container-fluid text-center vh-100">
+    <div class="row">
+      <script src="js/dashboard.js"></script>
+      <div class="col-8 my-5">
+        <div class="d-flex flex-row bd-highlight">
+          <button type="button" class="btn btn-outline-secondary" onclick="location.href='sales_management.html'">図表</button>
+          <button type="button" class="btn btn-outline-secondary" onclick="location.href='simulation.html'">シミュレーション</button>
+          <button type="button" class="btn btn-outline-secondary" onclick="location.href='analysis.html'">分析</button>
+        </div>
+        <div class="border border-secondary h-60">
+          <div class="d-flex flex-row justify-content-center">
+            <canvas id="lineChart"></canvas>
+            <script>
+                let lineCtx = document.getElementById("lineChart");
+                // 線グラフの設定
+                let lineConfig = {
+                  type: 'line',
+                  data: {
+                    // ※labelとデータの関係は得にありません
+                    labels: ['4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月', '1月', '2月', '3月'],
+                    datasets: [{
+                      label: '平均売上',
+                      data: [25000000, 27500000, 27500000, 27500000, 27500000, 27500000, 27500000],
+                      borderColor: '#f88',
+                    }, {
+                      label: 'コスト',
+                      data: [22500000, 25000000, 25000000, 25000000, 25000000, 25000000, 25000000],
+                      borderColor: '#484',
+                    }],
+                  },
+                  options: {
+                    scales: {
+                      // Y軸の最大値・最小値、目盛りの範囲などを設定する
+                      y: {
+                        suggestedMin: 0,
+                        suggestedMax: 30000000,
+                        ticks: {
+                          stepSize: 5000000,
+                        }
+                      }
+                    },
+                  },
+                };
+                let lineChart = new Chart(lineCtx, lineConfig);
+            </script>
+          </div>
+        </div>
+        <table class="table table-hover mt-5">
+          <thead>
+            <tr>
+              <th scope="col">
+                <select type="text" class="form-select-sm">
+                  <option selected>月</option>
+                  <option value="1">クォータ</option>
+                  <option value="2">年</option>
+                </select>
+              </th>
+              <th scope="col">
+                <select type="text" class="form-select-sm">
+                  <option selected>全社</option>
+                  <option value="1">取引先</option>
+                  <option value="2">要員</option>
+                </select>
+              </th>
+              <th scope="col">平均売上</th>
+              <th scope="col">コスト</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4</td>
+              <td><a href="#">全社</a></td>
+              <td>26,500,000</td>
+              <td>22,500,000</td>
+            </tr>
+          </tbody>
+        </table>
+        <script src="js/pagenation.js"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>        

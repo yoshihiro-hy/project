@@ -1,0 +1,93 @@
+<script src="js/head.js"></script>
+<body class="h-100">
+  <div class="container-fluid text-center vh-100">
+    <div class="row">
+      <script src="js/dashboard.js"></script>
+      <div class="col-8 my-5">
+        <div class="border border-secondary h-60">
+          <div class="d-flex flex-row justify-content-center">
+            <canvas id="lineChart"></canvas>
+            <script> 
+                let lineCtx = document.getElementById("lineChart");
+                // 線グラフの設定
+                let lineConfig = {
+                  type: 'line',
+                  data: {
+                    // ※labelとデータの関係は得にありません
+                    labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                    datasets: [{
+                      label: '売上',
+                      data: [25000000, 27500000, 27500000, 27500000, 27500000, 27500000, 27500000],
+                      borderColor: '#f88',
+                    }, {
+                      label: 'コスト',
+                      data: [22500000, 25000000, 25000000, 25000000, 25000000, 25000000, 25000000],
+                      borderColor: '#484',
+                    }, {
+                      label: '利益',
+                      data: [2250000, 2500000, 2500000, 2500000, 2500000, 2500000, 2500000],
+                      borderColor: '#48f',
+                    },{
+                      label: '利益率',
+                      data: [9, 9, 9, 9, 9, 9, 9],
+                      borderColor: '#ffa500',
+                    }],
+                  },
+                  options: {
+                    scales: {
+                      // Y軸の最大値・最小値、目盛りの範囲などを設定する
+                      y: {
+                        suggestedMin: 0,
+                        suggestedMax: 30000000,
+                        ticks: {
+                          stepSize: 5000000,
+                        }
+                      }
+                    },
+                  },
+                };
+                let lineChart = new Chart(lineCtx, lineConfig);
+            </script>
+          </div>
+        </div>
+        <table class="table table-hover mt-5">
+          <thead>
+            <tr>
+              <th>
+                <select type="text" class="form-select-sm">
+                  <option selected>月</option>
+                  <option value="1">クォータ</option>
+                  <option>年</option>
+                </select>
+              </th>
+              <th scope="col">要員コスト</th>
+              <th scope="col">固定費</th>
+              <th scope="col">売上</th>
+              <th scope="col">利益</th>
+              <th scope="col">利益率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>22,500,000</td>
+              <td>300,000</td>
+              <td>25,000,000</td>
+              <td>2,250,000</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>25,000,000</td>
+              <td>300,000</td>
+              <td>27,500,000</td>
+              <td>2500000</td>
+              <td>9</td>
+            </tr>
+          </tbody>
+        </table>
+        <script src="js/pagenation.js"></script>
+      </div>
+    </div>
+  </div>
+</body>

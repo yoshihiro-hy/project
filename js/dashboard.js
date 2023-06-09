@@ -1,0 +1,3 @@
+document.write(
+  '<div class="col-3 bg-secondary vh-100 py-3"><div><h1>Dashboard</h1></div><div class="list-group"><a href="index.html" class="list-group-item list-group-item-action list-group-item-light py-3">一覧</a><a href="workforce_management.html" class="list-group-item list-group-item-action list-group-item-light py-3">要員管理</a><a href="supplliers.html" class="list-group-item list-group-item-action list-group-item-light py-3">取引先管理</a><a href="sales_management.html" class="list-group-item list-group-item-action list-group-item-light py-3">売上管理</a><a href="fixed_cost.html" class="list-group-item list-group-item-action list-group-item-light py-3">その他固定費</a></div></div>'
+)
